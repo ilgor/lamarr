@@ -1,0 +1,7 @@
+{
+    "KeyName": "DemoKey", 
+    "RegionId": "us-east-2", 
+    "StackName": "InitialSetup", 
+    "TemplateUrl": "https://s3-us-west-2.amazonaws.com/cloudformation-templates-us-west-2/EC2InstanceWithSecurityGroupSample.template", 
+    "InstanceType": "t2.micro"
+}

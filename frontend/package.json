@@ -1,0 +1,49 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.9.14",
+    "@material-ui/icons": "^4.9.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "font-awesome": "^4.7.0",
+    "npm-watch": "^0.6.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js,jsx",
+      "quiet": true
+    }
+  },
+  "scripts": {
+    "watch": "npm-watch",
+    "start": "PORT=8080 react-scripts start",
+    "build": "rm -rf ../backend/templates/static && rm ../backend/templates/index.html && react-scripts build && cp -r build/index.html ../backend/templates/ && cp -r build/manifest.json ../backend/templates/ && cp -r build/favicon.png ../backend/templates/ && cp -r build/static/ ../backend/templates/static/",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

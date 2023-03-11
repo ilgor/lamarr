@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="container">
+        <h3>
+            Lamarr
+            <form action="/cf_setup" method="GET" class="float-right">
+                <button type="submit" class="btn btn-primary">Initial Setup</button>
+            </form>
+        </h3>
+        <hr>
+        {% for attr in attrs %}
+            <br>
+            <h2>
+                <span> Account: {{ attr.account }}, </span>
+                <span> Service Name: {{ service_name }} </span> 
+                <div class="float-right">
+                    <form action="/create" method="GET" class="float-right">
+                        <input type="hidden" class="form-control" id="{{ attr.account }}" name="{{ attr.account }}">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </form>
+                </div>
+            </h2>
+            <hr>
+
+            {% for d in attr.data %}
+                <form action="/delete" method="POST">
+                    <div class="form-group">
+                        <label>{{ d.url }}</label>
+                        <input type="hidden" class="form-control" id="{{d.url}}" name="{{d.url}}">
+                        {% if d.in_progress %}
+                            <div class="float-right"><button type="submit" class="btn btn-warning" disabled>In Progress</button></div>
+                        {% else %}
+                            <div class="float-right"><button type="submit" class="btn btn-danger" class="float-right">Delete</button></div>
+                        {% endif %}
+                        <hr>
+                    </div>
+                </form>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}

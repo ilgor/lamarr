@@ -1,0 +1,10 @@
+.env
+.DS_Store
+backend/.DS_Store
+notes.md
+
+backend/templates/static
+backend/creds.json
+backend/*.tar.gz
+.vscode/launch.json
+backend/templates/index.html

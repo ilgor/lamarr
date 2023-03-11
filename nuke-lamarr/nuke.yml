@@ -1,0 +1,9 @@
+
+regions:
+- eu-west-1
+- global # for resources not bound to a specific region, such as Route53 zones for example
+account-blacklist:
+- "111222333444" # production
+ 
+accounts:
+  "999888777666": {} # aws-nuke-example
